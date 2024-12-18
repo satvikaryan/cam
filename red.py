@@ -40,7 +40,7 @@ def detect_largest_red_contour(image):
 
 
 if __name__ == "__main__":
-    cap = cv2.VideoCapture(1)  
+    cap = cv2.VideoCapture(0)  
 
     if not cap.isOpened():
         print("Error: Cannot open video source.")
@@ -53,13 +53,14 @@ if __name__ == "__main__":
             break
 
         red_detected, visualized_frame = detect_largest_red_contour(frame)
-
-        print("1" if red_detected else "0")
-
         cv2.imshow("Largest Red Contour Detection", visualized_frame)
-
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        if red_detected == 1:
+            print("1")# if red_detected else "0")   
             break
+        else:
+            print("0")
+        # if cv2.waitKey(1) & 0xFF == ord('q'):
+        #     break
 
     cap.release()
     cv2.destroyAllWindows()

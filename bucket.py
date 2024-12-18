@@ -1,6 +1,3 @@
-#  I will delete this shit after it starts working
-
-
 #!/usr/bin/env python
 
 import rospy
@@ -41,10 +38,11 @@ def red_detection_node():
             break
         red_detected = detect_largest_red_contour(frame)
         gripper_pub.publish(Bool(data=red_detected))
-        cv2.imshow("Video Feed", frame)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+        # cv2.imshow("Video Feed", frame)
+        # if cv2.waitKey(1) & 0xFF == ord('q'):
+        #     break
         rate.sleep()
+        break
 
     cap.release()
     cv2.destroyAllWindows()
