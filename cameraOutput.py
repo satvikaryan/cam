@@ -1,7 +1,7 @@
 import cv2
 
 # Specify the camera index
-camera_index = 1
+camera_index = 0
 
 # Initialize the video capture object
 cap = cv2.VideoCapture(camera_index)

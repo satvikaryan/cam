@@ -51,16 +51,14 @@ if __name__ == "__main__":
         if not ret:
             print("End of video stream or failed to read frame.")
             break
-
+        
         red_detected, visualized_frame = detect_largest_red_contour(frame)
+
+        print("1" if red_detected else "0")
+
         cv2.imshow("Largest Red Contour Detection", visualized_frame)
-        if red_detected == 1:
-            print("1")# if red_detected else "0")   
+        if cv2.waitKey(1) & 0xFF == ord('q'):
             break
-        else:
-            print("0")
-        # if cv2.waitKey(1) & 0xFF == ord('q'):
-        #     break
 
     cap.release()
     cv2.destroyAllWindows()
