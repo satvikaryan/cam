@@ -58,8 +58,8 @@ while True:
                 parallel_centers = []
                 l_shape_center = None
 
-                parallel_tolerance = np.pi / 36  # ~5 degrees
-                l_shape_tolerance = np.pi / 18  # ~10 degrees
+                parallel_tolerance = np.pi / 72  # ~5 degrees
+                l_shape_tolerance = np.pi / 72  # ~10 degrees
 
                 for i in range(len(lines)):
                     rho1, theta1 = lines[i]
