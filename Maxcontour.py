@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-camera_index = 1
+camera_index = 0
 
 cap = cv2.VideoCapture(camera_index)
 
